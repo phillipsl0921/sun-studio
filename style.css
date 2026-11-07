@@ -80,9 +80,11 @@ p { margin: 0 0 1em; }
 .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 12px; }
 .hero-sun { position: relative; justify-self: center; width: min(520px, 100%); }
+/* the glow: a circle the image's own size (not the figure's, which holds the caption too: an oval there left a dark
+   crescent under the disk, where a shadow is not drawn), shrunk so all of it is under the picture */
 .hero-sun::before {
-  content: ""; position: absolute; inset: 6%; border-radius: 50%;
-  box-shadow: 0 0 120px 40px var(--glow); z-index: 0;
+  content: ""; position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: 1; border-radius: 50%;
+  transform: scale(.88); box-shadow: 0 0 120px 40px var(--glow); z-index: 0;
 }
 .hero-sun img { position: relative; z-index: 1; border-radius: 50%; aspect-ratio: 1; object-fit: cover; }
 .hero-caption { text-align: center; margin-top: 14px; }
