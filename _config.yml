@@ -1,0 +1,4 @@
+# The site is plain HTML; leave these files out of what is published.
+exclude:
+  - serve_preview.py
+  - README.md

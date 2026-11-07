@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Features · S.U.N. Studio</title>
+  <meta name="description" content="What S.U.N. Studio does: SER stacking, scoring and alignment, solar tone curves, prominences, timelapse finishing, mosaics, overlays, transits and the CME check.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="">S.U.N. Studio</a>
+    <button class="menu-button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="features.html" aria-current="page">Features</a>
+      <a href="guide-first-timelapse.html">Guides</a>
+      <a href="index.html#whats-new">What's new</a>
+      <a class="btn btn-primary btn-small" href="index.html#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Features</span>
+      <h1>Everything between the capture and the video</h1>
+      <p class="lead">S.U.N. Studio is one program for the whole job: stacking, choosing and aligning frames, grading,
+        overlays and export. Hover over any control in the program to see what it does.</p>
+      <div class="toc">
+        <a href="#stacking">Stacking</a>
+        <a href="#alignment">Scoring and alignment</a>
+        <a href="#look">The look</a>
+        <a href="#prominences">Prominences</a>
+        <a href="#timelapse">Timelapse</a>
+        <a href="#mosaics">Mosaics</a>
+        <a href="#overlays">Overlays</a>
+        <a href="#transits">Transits</a>
+        <a href="#cme">CME check</a>
+        <a href="#export">Export</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="stacking">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">Stacking</span>
+        <h2>A SER stacker made for timelapses</h2>
+        <p class="lead">Point it at a folder of mono SER videos and it makes one stack per capture, in parallel on every core.</p>
+        <ul class="checks">
+          <li>Keeps the sharpest share of frames, measured per capture</li>
+          <li>Each stack sits at the capture's mean geometry, so the stacks don't wobble from one capture to the next</li>
+          <li>Drizzle at 1.5×, 2× or 3× for undersampled setups</li>
+          <li>Darks, flats and bias, including master flats saved as FITS</li>
+          <li>Writes the capture's date and time into every stack</li>
+        </ul>
+      </div>
+      <figure class="frame tall"><div class="placeholder"><div><strong>Your screenshot here</strong>Stack SER Folder: a row per capture as it runs</div></div></figure>
+    </div>
+  </section>
+
+  <section class="feature" id="alignment">
+    <div class="wrap split flip">
+      <div>
+        <span class="eyebrow">Scoring and alignment</span>
+        <h2>Only the good frames, held still</h2>
+        <p class="lead"><span class="ui">Analyze &amp; Recommend</span> scores every frame for seeing, rejects soft and cloudy
+          ones, picks a reference and suggests settings. One Undo puts it all back.</p>
+        <ul class="checks">
+          <li>Alignment for full disks, limb close-ups and rotating fields</li>
+          <li>Limb Lock and Surface Lock to hold the part that matters</li>
+          <li>The difference against the reference, to check the alignment by eye</li>
+        </ul>
+      </div>
+      <figure class="frame"><img src="img/closeup_copper.jpg" alt="A close-up of the solar limb with prominences and fine surface detail" loading="lazy">
+        <figcaption>A limb close-up, 22 October 2026</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="feature" id="look">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">The look</span>
+        <h2>Curves made for the Sun</h2>
+        <p class="lead">Start from a preset, press <span class="ui">Auto stretch</span>, then fine-tune. Everything that
+          changes brightness works in grayscale, and the palette only picks a colour for each level.</p>
+        <ul class="checks">
+          <li>Auto stretch: positive or inverted, worked out from your frame's sky, prominences and disk</li>
+          <li>An editable tone curve, Levels and Primaries, with the clipping shown per colour channel</li>
+          <li>Lucy–Richardson, wavelets and Match detail to the sharpest frames</li>
+          <li>Turn any step off and on without losing its settings, compare A/B, or Reset all</li>
+          <li>Profiles you can save, share and import</li>
+        </ul>
+      </div>
+      <div class="compare" aria-label="Drag to compare the positive and inverted stretch">
+        <img src="img/auto_inverted.jpg" alt="The mosaic stretched inverted">
+        <img class="top" src="img/auto_positive.jpg" alt="The mosaic stretched positive">
+        <div class="handle"></div>
+        <span class="tag left">Positive</span><span class="tag right">Inverted</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Compare">
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="prominences">
+    <div class="wrap split flip">
+      <div>
+        <span class="eyebrow">Prominences and limb</span>
+        <h2>Faint prominences, a bright disk, both kept</h2>
+        <p class="lead">The prominence tools work at the limb before the curve, so you can bring up faint structure off
+          the limb without washing out the surface.</p>
+        <ul class="checks">
+          <li>Auto prominences, Prominence stretch and brightness</li>
+          <li>Chromosphere rim, Halo cleanup, Limb darkening correction</li>
+          <li>An off-limb curve and a soft Sky black</li>
+          <li>An occulting disk, if you want the prominences alone</li>
+        </ul>
+      </div>
+      <figure class="frame"><img src="img/prominence_detail.jpg" alt="Prominences on the limb of the full disk" loading="lazy">
+        <figcaption>The Prominence Detail preset, full disk, 15 October 2026</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="feature" id="timelapse">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">Timelapse</span>
+        <h2>Smooth from the first frame to the last</h2>
+        <ul class="checks">
+          <li>In-between frames and even pacing across gaps in the capture</li>
+          <li>De-shimmer, and deflicker measured on the aligned frames</li>
+          <li>Render &amp; Review: play the finished frames before you export</li>
+          <li>Text overlays with the time of each frame</li>
+        </ul>
+      </div>
+      <figure class="frame tall"><div class="placeholder"><div><strong>Your clip here</strong>A short loop of one of your timelapses</div></div></figure>
+    </div>
+  </section>
+
+  <section class="feature" id="mosaics">
+    <div class="wrap split flip">
+      <div>
+        <span class="eyebrow">Mosaics</span>
+        <h2>Panels into one full disk</h2>
+        <p class="lead"><span class="ui">Mosaic…</span> places overlapping panels by the surface detail they share, then joins them.</p>
+        <ul class="checks">
+          <li>Evens out the panels' brightness across the limb darkening</li>
+          <li>Balances the skies so no seam shows at a strong stretch</li>
+          <li>Named by the panels' capture time, so North up finds the date</li>
+        </ul>
+      </div>
+      <figure class="frame"><img src="img/mosaic_positive.jpg" alt="A full-disk mosaic from four panels" loading="lazy">
+        <figcaption>Four panels joined</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="feature" id="overlays">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">Overlays</span>
+        <h2>Where you are on the Sun</h2>
+        <p class="lead"><span class="ui">North up…</span> matches your frame with a public full-disk H-alpha image of the same time,
+          so the program knows which way solar north is.</p>
+        <ul class="checks">
+          <li>Active region labels from the daily Solar Region Summary, with a locator and N / E / S / W</li>
+          <li>A heliographic grid, with P, B0 and L0</li>
+          <li>Measure heights and track a prominence's rise in km and km/s</li>
+          <li>The Earth to true scale beside the Sun</li>
+        </ul>
+      </div>
+      <figure class="frame tall"><div class="placeholder"><div><strong>Your screenshot here</strong>Labels, grid and a measurement on one of your frames</div></div></figure>
+    </div>
+  </section>
+
+  <section class="feature" id="transits">
+    <div class="wrap split flip">
+      <div>
+        <span class="eyebrow">Transits</span>
+        <h2>Caught something crossing the Sun?</h2>
+        <p class="lead">While it stacks, the program looks for silhouettes crossing the disk (birds, aircraft, the ISS) and
+          makes a clip, a composite and the frames of each one.</p>
+        <ul class="checks">
+          <li>Dark and faint grey silhouettes</li>
+          <li>The transit frames are left out of the stack</li>
+          <li>Or only look for transits, without stacking</li>
+        </ul>
+      </div>
+      <figure class="frame"><img src="img/transit_bird.jpg" alt="A bird crossing the solar disk near the limb" loading="lazy">
+        <figcaption>A bird crossing, 22 October 2026</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="feature" id="cme">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">CME check</span>
+        <h2>Did a CME leave while you were filming?</h2>
+        <p class="lead">For a week after a session, the program checks the public coronal mass ejection catalogues for
+          one that left the Sun at the time and place you captured, and tells you if one did.</p>
+      </div>
+      <figure class="frame tall"><div class="placeholder"><div><strong>Your screenshot here</strong>The CME check window</div></div></figure>
+    </div>
+  </section>
+
+  <section class="feature" id="export">
+    <div class="wrap split flip">
+      <div>
+        <span class="eyebrow">Export</span>
+        <h2>Video, GIF, frames or a still</h2>
+        <ul class="checks">
+          <li>MP4 and GIF, named by the date and the span they cover</li>
+          <li>16-bit TIFF frames for further work</li>
+          <li>Save Still… for a single frame, with its labels if you like</li>
+          <li>Batch export for several sessions in a row</li>
+        </ul>
+      </div>
+      <figure class="frame"><img src="img/hero_copper.jpg" alt="The full solar disk in copper" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap" style="text-align:center">
+      <h2>Free for Windows</h2>
+      <p class="lead" style="margin-inline:auto">Version 1.0 · 135 MB</p>
+      <a class="btn btn-primary" href="index.html#download">Download S.U.N. Studio</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:8px"><img src="img/icon.png" alt="">S.U.N. Studio</div>
+      Solar Utility Nexus · free to download and use.
+    </div>
+    <nav>
+      <a href="features.html">Features</a>
+      <a href="guide-first-timelapse.html">Guides</a>
+      <a href="index.html#download">Download</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

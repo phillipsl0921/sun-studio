@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your first timelapse · S.U.N. Studio</title>
+  <meta name="description" content="A step-by-step guide to your first solar timelapse in S.U.N. Studio, from a folder of stacked TIFFs to an MP4.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="">S.U.N. Studio</a>
+    <button class="menu-button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="features.html">Features</a>
+      <a href="guide-first-timelapse.html" aria-current="page">Guides</a>
+      <a href="index.html#whats-new">What's new</a>
+      <a class="btn btn-primary btn-small" href="index.html#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap guide">
+  <nav aria-label="On this page">
+    <p class="small muted" style="margin:0 0 10px">On this page</p>
+    <a href="#install">1. Install</a>
+    <a href="#import">2. Import your stacks</a>
+    <a href="#analyze">3. Analyze &amp; Recommend</a>
+    <a href="#look">4. Choose a look</a>
+    <a href="#tune">5. Fine-tune</a>
+    <a href="#text">6. Add the time</a>
+    <a href="#export">7. Review and export</a>
+    <p class="small muted" style="margin:24px 0 10px">More guides</p>
+    <a href="#">Stacking SER videos</a>
+    <a href="#">North up and the labels</a>
+    <a href="#">Making a mosaic</a>
+    <a href="#">Measuring a prominence</a>
+  </nav>
+
+  <article>
+    <span class="eyebrow">Guide · about 15 minutes</span>
+    <h1>Your first timelapse</h1>
+    <p class="lead">From a folder of stacked TIFFs to a finished MP4. If you're starting from SER videos, stack them first
+      (<a href="#">Stacking SER videos</a>), then carry on here.</p>
+
+    <h2 id="install">1. Install</h2>
+    <ol>
+      <li>Unzip the whole download into a folder of its own, for example <span class="ui">Documents</span>. Don't run it from inside the zip.</li>
+      <li>Double-click <span class="ui">S.U.N. Studio.exe</span>. If Windows says it protected your PC, click
+        <span class="ui">More info</span>, then <span class="ui">Run anyway</span>.</li>
+    </ol>
+
+    <h2 id="import">2. Import your stacks</h2>
+    <p>Click <span class="ui">Import TIFF Folder</span> and choose a folder of stacked 16-bit TIFFs from one session. Times in
+      the file names (<code>HH_MM_SS</code>) place each frame on the timeline. Your TIFF files are never changed.</p>
+
+    <h2 id="analyze">3. Analyze &amp; Recommend</h2>
+    <p>Press <span class="ui">Analyze &amp; Recommend</span>. In about 20 seconds it scores every frame, marks the soft and cloudy
+      ones, picks a reference frame and suggests settings. Tick what you want and apply.</p>
+    <div class="tip"><strong>Tip:</strong> one <kbd>Ctrl</kbd> + <kbd>Z</kbd> undoes everything it applied.</div>
+
+    <h2 id="look">4. Choose a look</h2>
+    <ol>
+      <li>Open <span class="ui">Presets…</span> and choose <span class="ui">The Chaser — Copper</span> (or <span class="ui">— Fire</span>).</li>
+      <li>Under <span class="ui">Stretch › Editable tone curve</span>, pick <span class="ui">Positive</span> or
+        <span class="ui">Inverted</span> and press <span class="ui">Auto stretch</span>. It measures the sky, the prominences
+        and the disk on the reference frame and writes the curve.</li>
+    </ol>
+    <figure class="frame" style="margin:20px 0">
+      <div class="compare" style="border-radius:0" aria-label="Drag to compare the positive and inverted stretch">
+        <img src="img/auto_inverted.jpg" alt="Inverted">
+        <img class="top" src="img/auto_positive.jpg" alt="Positive">
+        <div class="handle"></div>
+        <span class="tag left">Positive</span><span class="tag right">Inverted</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Compare">
+      </div>
+      <figcaption>The same frame after Auto stretch, positive and inverted</figcaption>
+    </figure>
+
+    <h2 id="tune">5. Fine-tune</h2>
+    <ul>
+      <li><span class="ui">Prominence › Prominences and limb</span>: stretch, brightness and the rim at the limb</li>
+      <li><span class="ui">Sharpen › Wavelets</span>: more or less structure</li>
+      <li><span class="ui">Color Grade › Primaries</span>: Contrast, Shadows, Highlights</li>
+      <li><span class="ui">Stretch › Levels</span>: black point, midtones, white point</li>
+    </ul>
+    <p>The box beside each section's title turns that step off and on, and its settings stay. Right-click a title to reset
+      just that section.</p>
+
+    <h2 id="text">6. Add the time</h2>
+    <p>Under <span class="ui">Overlay › Text overlay</span>, type a title and the date. Each frame shows its own capture time.</p>
+
+    <h2 id="export">7. Review and export</h2>
+    <ol>
+      <li><span class="ui">Render &amp; Review</span> renders every frame with your settings so you can play it through first.</li>
+      <li><span class="ui">Export…</span> makes the MP4, GIF and / or 16-bit TIFF frames. For a single frame, use
+        <span class="ui">Save Still…</span>.</li>
+    </ol>
+    <div class="tip"><strong>Keys:</strong> <kbd>←</kbd> <kbd>→</kbd> frames · <kbd>D</kbd> reject · <kbd>R</kbd> reference ·
+      <kbd>P</kbd> play · <kbd>Ctrl</kbd>+<kbd>S</kbd> save the project</div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:8px"><img src="img/icon.png" alt="">S.U.N. Studio</div>
+      Solar Utility Nexus · free to download and use.
+    </div>
+    <nav>
+      <a href="features.html">Features</a>
+      <a href="guide-first-timelapse.html">Guides</a>
+      <a href="index.html#download">Download</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
