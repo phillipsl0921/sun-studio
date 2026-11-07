@@ -178,6 +178,8 @@ figure { margin: 0; }
 .guide nav { position: sticky; top: 88px; align-self: start; font-size: .92rem; }
 .guide nav a { display: block; padding: 6px 0 6px 12px; border-left: 2px solid var(--line); color: var(--ink-soft); }
 .guide nav a:hover { border-color: var(--accent); color: var(--ink); }
+.guide nav .soon { display: block; padding: 6px 0 6px 12px; border-left: 2px solid var(--line); color: var(--ink-muted); }
+.guide nav .soon em { font-style: normal; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; margin-left: 4px; color: var(--accent); }
 .guide article { max-width: 44em; }
 .guide article h2 { font-size: 1.6rem; margin-top: 2.2em; scroll-margin-top: 80px; }
 .guide article p, .guide article li { color: var(--ink-soft); }
