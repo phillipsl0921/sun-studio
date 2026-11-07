@@ -1,5 +1,14 @@
-// S.U.N. Studio website: the phone menu and the positive / inverted slider.
+// S.U.N. Studio website: the phone menu, the positive / inverted slider and the timelapse clips.
 document.addEventListener('DOMContentLoaded', function () {
+  // A visitor whose system asks for less motion gets the clip paused, with its controls to play it.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video[autoplay]').forEach(function (video) {
+      video.removeAttribute('autoplay');
+      video.pause();
+      video.controls = true;
+    });
+  }
+
   var button = document.querySelector('.menu-button');
   var nav = document.querySelector('.nav');
   if (button && nav) {

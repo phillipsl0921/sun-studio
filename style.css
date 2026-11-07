@@ -140,6 +140,8 @@ p { margin: 0 0 1em; }
 .checks li::before { content: ""; position: absolute; left: 4px; top: .55em; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--glow); }
 .frame { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--bg-sunk); }
 .frame.tall { aspect-ratio: 4 / 3; }
+.frame video { display: block; width: 100%; height: auto; }
+.frame.clip { width: min(440px, 100%); justify-self: center; }
 .frame figcaption { padding: 10px 14px; font-size: .85rem; color: var(--ink-muted); border-top: 1px solid var(--line); }
 figure { margin: 0; }
 
