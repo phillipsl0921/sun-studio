@@ -65,7 +65,7 @@
   <section class="steps" aria-label="How it works">
     <div class="wrap">
       <ol>
-        <li><span class="num">01</span><h3>Stack</h3><p>Stack a folder of SER videos, or start from stacked TIFFs you already have.</p></li>
+        <li><span class="num">01</span><h3>Stack</h3><p>Stack a folder of SER videos, each capture with its own best share of frames, or start from stacked TIFFs you already have.</p></li>
         <li><span class="num">02</span><h3>Score and align</h3><p>Soft and cloudy frames are found, a reference is picked, and every frame is aligned to it.</p></li>
         <li><span class="num">03</span><h3>Grade</h3><p>Sharpening, a solar tone curve, the prominences and a colour palette, all previewed live.</p></li>
         <li><span class="num">04</span><h3>Export</h3><p>MP4, GIF or 16-bit TIFF frames, or a single still.</p></li>
@@ -84,8 +84,10 @@
       <div class="grid cards">
         <article class="card">
           <div class="media"><img src="img/stacker_card.png" alt="The stacker's window: a row for each capture, with its frames, size and progress" loading="lazy" style="object-position:left top"></div>
-          <div class="body"><h3>A stacker of its own</h3><p>Stacks mono SER videos with drizzle and darks, flats and bias, and keeps
-            each stack steady against the next, which matters for a timelapse.</p></div>
+          <div class="body"><h3>A stacker of its own</h3><p>Give it a range, 15–80 % by default, and it works out for every capture
+            which share of the frames holds the most real detail for its noise: fewer frames when the seeing was unsteady,
+            more when it was calm. Each patch of the disk takes its own sharpest frames, and every stack holds steady
+            against the next.</p></div>
         </article>
         <article class="card">
           <div class="media"><img src="img/auto_positive.jpg" alt="A mosaic of the Sun after Auto stretch, positive" loading="lazy"></div>

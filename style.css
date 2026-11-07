@@ -182,6 +182,7 @@ figure { margin: 0; }
 .guide nav .soon em { font-style: normal; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; margin-left: 4px; color: var(--accent); }
 .guide article { max-width: 44em; }
 .guide article h2 { font-size: 1.6rem; margin-top: 2.2em; scroll-margin-top: 80px; }
+.guide article h3 { font-size: 1.12rem; margin-top: 1.8em; }
 .guide article p, .guide article li { color: var(--ink-soft); }
 .guide article ol li, .guide article ul li { margin-bottom: 8px; }
 kbd { font: .85em var(--body); padding: 2px 7px; border-radius: 5px; border: 1px solid var(--line); border-bottom-width: 2px; background: var(--bg-raised); color: var(--ink); }

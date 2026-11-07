@@ -67,7 +67,8 @@
         <h2>A SER stacker made for timelapses</h2>
         <p class="lead">Point it at a folder of mono SER videos and it makes one stack per capture, in parallel on every core.</p>
         <ul class="checks">
-          <li>Keeps the sharpest share of frames, measured per capture</li>
+          <li>A range, not a fixed share: you set it (15–80 % by default), and for each capture it stacks the candidate shares twice from alternate frames and keeps the one whose finest real detail stands highest above the noise</li>
+          <li>Each patch of the disk takes its own sharpest frames, so a moment of good seeing in one corner is used there</li>
           <li>Each stack sits at the capture's mean geometry, so the stacks don't wobble from one capture to the next</li>
           <li>Drizzle at 1.5×, 2× or 3× for undersampled setups</li>
           <li>Darks, flats and bias, including master flats saved as FITS</li>

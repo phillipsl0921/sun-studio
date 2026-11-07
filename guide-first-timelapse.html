@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Your first timelapse · S.U.N. Studio</title>
-  <meta name="description" content="A step-by-step guide to your first solar timelapse in S.U.N. Studio, from a folder of stacked TIFFs to an MP4.">
+  <meta name="description" content="A step-by-step guide to your first solar timelapse in S.U.N. Studio: stacking, the look, the time, sunspot labels, the Earth to scale, measurements and the export.">
   <link rel="canonical" href="https://sunstudioapp.com/guide-first-timelapse.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="S.U.N. Studio">
   <meta property="og:title" content="Your first timelapse · S.U.N. Studio">
-  <meta property="og:description" content="A step-by-step guide to your first solar timelapse in S.U.N. Studio, from a folder of stacked TIFFs to an MP4.">
+  <meta property="og:description" content="A step-by-step guide to your first solar timelapse in S.U.N. Studio: stacking, the look, the time, sunspot labels, the Earth to scale, measurements and the export.">
   <meta property="og:url" content="https://sunstudioapp.com/guide-first-timelapse.html">
   <meta property="og:image" content="https://sunstudioapp.com/img/og_card.jpg">
   <meta property="og:image:width" content="1200">
@@ -42,12 +42,14 @@
   <nav aria-label="On this page">
     <p class="small muted" style="margin:0 0 10px">On this page</p>
     <a href="#install">1. Install</a>
-    <a href="#import">2. Import your stacks</a>
+    <a href="#import">2. Import or stack</a>
     <a href="#analyze">3. Analyze &amp; Recommend</a>
     <a href="#look">4. Choose a look</a>
     <a href="#tune">5. Fine-tune</a>
-    <a href="#text">6. Add the time</a>
-    <a href="#export">7. Review and export</a>
+    <a href="#frame">6. Turn and crop</a>
+    <a href="#overlays">7. Add overlays</a>
+    <a href="#smooth">8. Make it smooth</a>
+    <a href="#export">9. Review and export</a>
     <p class="small muted" style="margin:24px 0 10px">More guides</p>
     <span class="soon">Stacking SER videos <em>soon</em></span>
     <span class="soon">North up and the labels <em>soon</em></span>
@@ -56,10 +58,10 @@
   </nav>
 
   <article>
-    <span class="eyebrow">Guide · about 15 minutes</span>
+    <span class="eyebrow">Guide · about 25 minutes</span>
     <h1>Your first timelapse</h1>
-    <p class="lead">From a folder of stacked TIFFs to a finished MP4. If you're starting from SER videos, stack them first
-      with <span class="ui">Stack SER Folder…</span>, then carry on here.</p>
+    <p class="lead">From a folder of captures to a finished MP4, with the time, the region labels, the Earth to scale and
+      a measured prominence on it if you like.</p>
 
     <h2 id="install">1. Install</h2>
     <ol>
@@ -68,13 +70,24 @@
         <span class="ui">More info</span>, then <span class="ui">Run anyway</span>.</li>
     </ol>
 
-    <h2 id="import">2. Import your stacks</h2>
-    <p>Click <span class="ui">Import TIFF Folder</span> and choose a folder of stacked 16-bit TIFFs from one session. Times in
-      the file names (<code>HH_MM_SS</code>) place each frame on the timeline. Your TIFF files are never changed.</p>
+    <h2 id="import">2. Import or stack</h2>
+    <p>Already have stacked 16-bit TIFFs? Click <span class="ui">Import TIFF Folder</span> and choose the folder of one
+      session. Times in the file names (<code>HH_MM_SS</code>) place each frame on the timeline. Your files are never changed.</p>
+    <p>Starting from SER videos? Click <span class="ui">Stack SER Folder…</span> and choose the folder of captures.</p>
+    <ul>
+      <li><strong>The share of frames is a range</strong>, 15–80 % by default. For every capture the stacker tries the shares
+        in that range, stacking each twice from alternate frames, and keeps the one whose finest real detail stands highest
+        above the noise: fewer frames when the seeing was unsteady, more when it was calm. Set both ends the same for a fixed share.</li>
+      <li>Each patch of the disk takes its own sharpest frames, so a moment of good seeing in one part of the disk is used there.</li>
+      <li>Darks, flats and bias, drizzle and the search for transits are in the same window.</li>
+      <li>A row per capture shows its progress, and the stacks can open in the program as soon as it finishes.</li>
+    </ul>
 
     <h2 id="analyze">3. Analyze &amp; Recommend</h2>
     <p>Press <span class="ui">Analyze &amp; Recommend</span>. In about 20 seconds it scores every frame, marks the soft and cloudy
       ones, picks a reference frame and suggests settings. Tick what you want and apply.</p>
+    <p>Then look through the frames: <kbd>←</kbd> <kbd>→</kbd> step through them, <kbd>D</kbd> rejects the one shown (or brings
+      it back) and <kbd>R</kbd> makes it the reference.</p>
     <div class="tip"><strong>Tip:</strong> one <kbd>Ctrl</kbd> + <kbd>Z</kbd> undoes everything it applied.</div>
 
     <h2 id="look">4. Choose a look</h2>
@@ -82,7 +95,8 @@
       <li>Open <span class="ui">Presets…</span> and choose <span class="ui">The Chaser — Copper</span> (or <span class="ui">— Fire</span>).</li>
       <li>Under <span class="ui">Stretch › Editable tone curve</span>, pick <span class="ui">Positive</span> or
         <span class="ui">Inverted</span> and press <span class="ui">Auto stretch</span>. It measures the sky, the prominences
-        and the disk on the reference frame and writes the curve.</li>
+        and the disk on the reference frame and writes the curve: Positive gives a black sky and bright prominences, Inverted
+        the dark-on-light look with the prominences still bright.</li>
     </ol>
     <figure class="frame" style="margin:20px 0">
       <div class="compare" style="border-radius:0" aria-label="Drag to compare the positive and inverted stretch">
@@ -103,19 +117,105 @@
       <li><span class="ui">Stretch › Levels</span>: black point, midtones, white point</li>
     </ul>
     <p>The box beside each section's title turns that step off and on, and its settings stay. Right-click a title to reset
-      just that section.</p>
+      just that section, or use <span class="ui">Reset all</span> to start over. <span class="ui">A / B</span> on the preview's
+      toolbar splits the picture, with the left half as it was before your last change.</p>
 
-    <h2 id="text">6. Add the time</h2>
-    <p>Under <span class="ui">Overlay › Text overlay</span>, type a title and the date. Each frame shows its own capture time.</p>
+    <h2 id="frame">6. Turn and crop</h2>
+    <ul>
+      <li><strong>North up.</strong> Press <span class="ui">North up…</span> on the preview's toolbar, choose the reference
+        image (GONG H-alpha or SDO), check the capture time in UTC and press <span class="ui">Find</span>. It matches your
+        reference frame against a public full-disk image taken at the same time; <span class="ui">Apply</span> turns the view
+        so solar north is up and east is on the left. The region labels, the grid and the directions need it.</li>
+      <li><strong>By hand.</strong> <span class="ui">Rotate</span>, <span class="ui">Flip H</span> and
+        <span class="ui">Flip V</span> above the timeline turn the picture yourself.</li>
+      <li><strong>The crop.</strong> Drag on the preview to draw it. Drag inside it to move it, or pull its corners and edges
+        to resize it; a grid and its size in pixels show while you adjust it. Right-click removes it.</li>
+    </ul>
 
-    <h2 id="export">7. Review and export</h2>
+    <h2 id="overlays">7. Add overlays</h2>
+    <p>Everything drawn over the timelapse is in the <span class="ui">Overlay</span> group, and shows on the preview as you set it.</p>
+    <figure class="frame" style="margin:20px 0">
+      <img src="img/overlays.jpg" alt="A full-disk frame with its active regions labelled, N, E, S and W at its edges, and a prominence measured at the east limb" loading="lazy">
+      <figcaption>Region labels, directions and a measured prominence on a frame of a 15 October 2026 timelapse</figcaption>
+    </figure>
+
+    <h3>The time and a title</h3>
+    <p>In <span class="ui">Text overlay</span>, tick <span class="ui">Burn in text: capture time, date, title</span>. Type a
+      <span class="ui">Title</span>, the <span class="ui">Date</span> if your file names hold only the time, and a
+      <span class="ui">Time zone label</span> such as UTC or EDT. Each frame shows its own capture time. The lines are built
+      from fields: <code>{title}</code> <code>{date}</code> <code>{time}</code> <code>{zone}</code> <code>{elapsed}</code>
+      <code>{frame}</code>. <span class="ui">Position</span> puts the text in a corner, or
+      <span class="ui">Place text by clicking on the preview</span> puts it where you click.</p>
+
+    <h3>Sunspot labels and directions</h3>
+    <p>After <span class="ui">North up…</span>, tick <span class="ui">Label the sunspot regions (NOAA numbers)</span> in
+      <span class="ui">Sunspot labels and directions</span>. Each active region gets its number from that day's region
+      summary, downloaded once and kept, and every label is placed clear of the others.
+      <span class="ui">Directions on the Sun: N, E, S, W</span> puts the four letters at the picture's edges. Their size,
+      colour and outline are set below.</p>
+
+    <h3>Where a close-up is</h3>
+    <p>In <span class="ui">Locator</span>, tick <span class="ui">Locator: where the frame is on the Sun (close-ups)</span>: a
+      small disk in a corner, north up, with your frame outlined on it.</p>
+
+    <h3>A heliographic grid</h3>
+    <p><span class="ui">Heliographic grid</span> draws latitude and longitude lines, either fixed on the disk (Stonyhurst) or
+      turning with the Sun (Carrington), at the spacing you choose, and can show P, B0 and L0 in a corner.</p>
+
+    <h3>The Earth to scale</h3>
     <ol>
-      <li><span class="ui">Render &amp; Review</span> renders every frame with your settings so you can play it through first.</li>
-      <li><span class="ui">Export…</span> makes the MP4, GIF and / or 16-bit TIFF frames. For a single frame, use
+      <li>In <span class="ui">Telescope and camera</span>, fill in the focal length, the camera's pixel size and any Barlow,
+        drizzle or binning. That sets the image scale.</li>
+      <li>In <span class="ui">NASA Earth — true solar scale</span>, press <span class="ui">Download NASA Earth photograph</span>,
+        then tick <span class="ui">Show Earth in preview</span> and <span class="ui">Include Earth in exports</span>.</li>
+      <li>Drag the Earth where you want it on the preview. It is drawn at its true size beside the Sun.</li>
+    </ol>
+
+    <h3>Measure a prominence</h3>
+    <ol>
+      <li>Press <span class="ui">Measure (M)</span> on the preview's toolbar. A click gives a point's height above the limb,
+        a drag the distance between two points.</li>
+      <li>In <span class="ui">Measurements</span>, press <span class="ui">Add the one on the preview</span>, then
+        <span class="ui">Track it</span>: it follows the prominence from frame to frame. If a point drifts off, drag it back
+        on a later frame and the track is redone from there. <span class="ui">Start here</span> and
+        <span class="ui">End here</span> set the frames it shows on.</li>
+      <li>Choose km and km/h, miles and mph, or both, tick <span class="ui">Also in Earth diameters</span> if you like, and
+        <span class="ui">Show the measurements in the timelapse</span>. The speed is fitted over the minutes you set, so it
+        doesn't jump from frame to frame.</li>
+    </ol>
+
+    <h3>Hide the disk</h3>
+    <p><span class="ui">Occult the disk (only the limb and prominences show)</span> in <span class="ui">Occulting disk</span>
+      covers the disk with a soft edge, for a timelapse of the prominences alone.</p>
+    <div class="tip"><strong>Tip:</strong> the MP4 and GIF always carry the overlays. Tick
+      <span class="ui">Text, labels and measurements also on exported TIFF frames and Save Still</span> to burn them into
+      those too.</div>
+
+    <h2 id="smooth">8. Make it smooth</h2>
+    <p>The timelapse settings are in the <span class="ui">Export</span> group.</p>
+    <ul>
+      <li><span class="ui">Timelapse — in-betweens</span>: <span class="ui">Frames per capture</span> adds frames between the
+        captures for smooth playback; <span class="ui">Keep the video length</span> raises the frame rate instead (60 fps at most).</li>
+      <li><span class="ui">De-shimmer (timelapse)</span>: <span class="ui">De-shimmer the timelapse</span> takes out the seeing's
+        wobble from frame to frame. Prominences beyond the limb keep their own motion.</li>
+      <li><span class="ui">Temporal smoothing (deflicker)</span>: <span class="ui">Smooth the timelapse over time</span> evens out
+        the brightness from frame to frame and keeps the detail.</li>
+      <li><span class="ui">Registration target — limb / surface lock</span>: <span class="ui">Limb Lock</span> holds the disk's
+        edge still, so the surface turns slowly through the video; <span class="ui">Surface Lock</span> holds the features still.</li>
+    </ul>
+
+    <h2 id="export">9. Review and export</h2>
+    <ol>
+      <li><span class="ui">Render &amp; Review</span> renders every frame with your settings so you can play it through first.
+        <span class="ui">Difference vs reference</span> shows how well the frames line up.</li>
+      <li>In the Review window, <span class="ui">Overlays</span> gives <span class="ui">With overlays</span>,
+        <span class="ui">Without overlays</span> or <span class="ui">Both: with and without</span>: two videos from one render.</li>
+      <li><span class="ui">Export…</span> makes the MP4, GIF and / or 16-bit TIFF frames, named by the date and the time they
+        span, such as <code>SUN_2026-10-15_1301-1627_3h26m.mp4</code>. For a single frame, use
         <span class="ui">Save Still…</span>.</li>
     </ol>
     <div class="tip"><strong>Keys:</strong> <kbd>←</kbd> <kbd>→</kbd> frames · <kbd>D</kbd> reject · <kbd>R</kbd> reference ·
-      <kbd>P</kbd> play · <kbd>Ctrl</kbd>+<kbd>S</kbd> save the project</div>
+      <kbd>P</kbd> play · <kbd>M</kbd> measure · <kbd>Ctrl</kbd>+<kbd>S</kbd> save the project</div>
   </article>
 </main>
 
